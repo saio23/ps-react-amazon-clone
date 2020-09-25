@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { Link, useHistory } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
@@ -14,10 +14,12 @@ function Header() {
       auth.signOut();
     }
   };
+  const [searchInput, setSearchInput] = useState('')
 
   const showName = () => {
       return !user ? 'Guest' : user.displayName ? user?.displayName : user?.email;
   };
+
 
   return (
     <nav className="header">
@@ -32,8 +34,10 @@ function Header() {
       {/* Logo img */}
       {/* Search Box */}
       <div className="header__search">
-        <input type="text" className="header__searchInput" />
+
+        <input type="text" value={searchInput} className="header__searchInput" onChange={(event) => setSearchInput(event.target.value)} />
         <SearchIcon className="header__searchIcon" />
+      
       </div>
 
       <div className="header__nav">
