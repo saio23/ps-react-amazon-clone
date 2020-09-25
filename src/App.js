@@ -10,13 +10,14 @@ import { useStateValue } from "./StateProvider";
 import Payment from "./Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import Orders from "./Orders";
 
 const promise = loadStripe(
   "pk_test_51HQCazHhiclqlK7rUUZ6itp5WGTVR7ZwmP8RQZdHkolyr5hPVFmX4gCGHyMfL97HLvvY5p9Hsd2ko621KK0CvRD700KYdPGRU4"
 );
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const [{ }, dispatch] = useStateValue();
 
   useEffect(() => {
     //  will only run once when the app component loads
@@ -60,7 +61,10 @@ function App() {
               <Payment />
             </Elements>
           </Route>
-
+          <Route path='/orders'>
+            <Header />
+            <Orders />
+          </Route>
           {/* Last path is the default route */}
           <Route path="/">
             <Header />

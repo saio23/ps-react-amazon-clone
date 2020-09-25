@@ -54,6 +54,13 @@ const reducer = (state, action) => {
         basket: newBasket.sort((a,b) => 0.5  - Math.random()*newBasket.length),
       };
     }
+    
+    case "EMPTY_BASKET":{
+      return{
+          ...state,
+          basket:[]
+      };
+    }
     default:
       return state;
   }

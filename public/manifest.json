@@ -3,9 +3,9 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "amazon_n_logo.JPG",
-      "sizes": "600x147",
-      "type": "image/jpeg"
+      "src": "amazonlogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
